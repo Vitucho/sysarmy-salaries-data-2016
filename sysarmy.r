@@ -28,7 +28,7 @@ cleanup <- function(data, handleOutliers) {
   data <- rename(data, "A..os.de.experiencia", "YearsExperience")
   data <- rename(data, "A..os.en.el.puesto.actual", "YearsCurrentJob")
   data <- rename(data, "Trabajo.de", "JobDescription")
-  data <- rename(data, "Tipo.de.contrato", "JobType")
+  data <- rename(data, "Tipo.de.contrato", "ContractType")
   data <- rename(data, "Qu...tan.conforme.est..s.con.tu.sueldo.", "Happiness")
   data <- rename(data, "Cambiaste.de.empresa.en.los...ltimos.6.meses.", "SwitchedJobsLast6Months")
 
@@ -60,7 +60,7 @@ cleanup <- function(data, handleOutliers) {
   data <- handleOutliers(data)
   
   keep <- c("Age", "Region", "YearsExperience", "YearsCurrentJob", "JobDescription",
-            "JobType", "Happiness", "Income", "Gender", "SwitchedJobsLast6Months")
+            "ContractType", "Happiness", "Income", "Gender", "SwitchedJobsLast6Months")
   return(data[keep])
 }
 
